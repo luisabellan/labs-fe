@@ -1,8 +1,9 @@
 import React from "react";
 import "./App.css";
+import NavigationHeader from "./components/Navigation/Navigation";
 
-function App(): any {
-  return <h1> Hello World</h1>;
-}
+const App = (): any => (
+  <NavigationHeader />
+);
 
 export default App;
