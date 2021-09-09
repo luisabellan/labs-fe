@@ -10,10 +10,31 @@ function NavigationHeader(): any {
       <Header>
         <div className="logo" />
         <Menu mode="horizontal">
-          <Menu.Item><Link to="/attendance">Attendance Tracker</Link></Menu.Item>
-          <Menu.Item>Link 1</Menu.Item>
-          <Menu.Item>Link 1</Menu.Item>
-          <Menu.Item>Link 1</Menu.Item>
+          <Menu.Item>
+            <Link to="/">
+              Home
+            </Link>
+          </Menu.Item>
+          <Menu.Item>
+            <Link to="/attendance">
+              Attendance Tracker
+            </Link>
+          </Menu.Item>
+          <Menu.Item>
+            <Link to="/teambuilder">
+              Team Builder
+            </Link>
+          </Menu.Item>
+          <Menu.Item>
+            <Link to="/learnersuccess">
+              Learner Success Auditing
+            </Link>
+          </Menu.Item>
+          <Menu.Item>
+            <Link to="/fourth">
+              Fourth Component
+            </Link>
+          </Menu.Item>
         </Menu>
       </Header>
     </Layout>
