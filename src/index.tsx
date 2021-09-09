@@ -5,12 +5,14 @@ import {
   BrowserRouter as Router, Route, Link, Switch,
 } from "react-router-dom";
 import App from "./App";
+import Attendance from "./components/Attendance/Attendance";
 
 ReactDOM.render(
   <Router>
+    <App />
     <Switch>
-      <Route exact path="/">
-        <App />
+      <Route path="/attendance">
+        <Attendance />
       </Route>
     </Switch>
   </Router>,

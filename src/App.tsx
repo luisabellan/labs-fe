@@ -4,6 +4,7 @@ import NavigationHeader from "./components/Navigation/Navigation";
 
 const App = (): any => (
   <NavigationHeader />
+
 );
 
 export default App;
