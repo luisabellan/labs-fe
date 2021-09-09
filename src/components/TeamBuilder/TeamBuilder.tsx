@@ -1,6 +1,6 @@
 import React from "react";
 
-function TeamBuilder() {
+function TeamBuilder(): any {
   return (
     <h1>Team Builder Component</h1>
   );
