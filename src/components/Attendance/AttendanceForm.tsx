@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import {
-  Button, Select, Space, DatePicker,
-} from "antd";
 import moment from "moment";
+import {
+  Button, Select, Space, DatePicker, Upload,
+} from "antd";
+import { UploadOutlined } from "@ant-design/icons";
 
 const { Option } = Select;
 
@@ -33,8 +34,15 @@ const FormLayoutDemo = (): JSX.Element => {
         </Select>
         {/* this is working but it's not satisfying the compiler
          after a lot of research this morning I've come to the conclusion
-         this is simply 💀. We'll have to consider a refactor */}
-        <DatePicker defaultValue={date} onChange={handleDateChange} />
+        this is simply 💀. We'll have to consider a refactor */}
+        <div>Select Date</div>
+        <DatePicker defaultValue={date} onChange={() => handleDateChange} />
+        <div>Upload Attendance CSV</div>
+        <Upload
+          accept=".txt, .csv"
+        >
+          <Button icon={<UploadOutlined />}>Click to Upload</Button>
+        </Upload>
         <Button onClick={onSubmitAttendance} type="primary">Submit</Button>
       </Space>
     </>

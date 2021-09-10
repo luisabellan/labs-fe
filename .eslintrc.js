@@ -31,6 +31,7 @@ module.exports = {
     ],
     "no-shadow": "off",
     "@typescript-eslint/no-shadow": ["error"],
+    "max-len": ["warn", { code: 800 }],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "import/prefer-default-export": "off",
