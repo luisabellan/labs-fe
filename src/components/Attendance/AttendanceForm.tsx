@@ -3,7 +3,7 @@ import {
   Form, Input, Button,
 } from "antd";
 
-const FormLayoutDemo = (): any => (
+const FormLayoutDemo = (): JSX.Element => (
   <>
     <Form
       layout="vertical"

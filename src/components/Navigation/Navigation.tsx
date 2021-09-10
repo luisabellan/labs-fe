@@ -7,9 +7,8 @@ const { Header } = Layout;
 function NavigationHeader(): JSX.Element {
   return (
     <Layout className="layout">
-      <Header>
-        <div className="logo" />
-        <Menu mode="horizontal">
+      <Header style={{ padding: 0 }}>
+        <Menu mode="horizontal" theme="light">
           <Menu.Item>
             <Link to="/">
               Home
