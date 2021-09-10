@@ -12,7 +12,7 @@ import LearnerSuccess from "./components/LearnerSuccess/LearnerSuccess";
 import FourthComponent from "./components/FourthComponent/FourthComponent";
 import Home from "./components/Home/Home";
 
-const App = (): any => (
+const App = (): JSX.Element => (
   <>
     <NavigationHeader />
     <Switch>

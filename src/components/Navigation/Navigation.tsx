@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const { Header } = Layout;
 
-function NavigationHeader(): any {
+function NavigationHeader(): JSX.Element {
   return (
     <Layout className="layout">
       <Header>

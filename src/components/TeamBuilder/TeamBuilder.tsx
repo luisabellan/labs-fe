@@ -1,6 +1,6 @@
 import React from "react";
 
-function TeamBuilder(): any {
+function TeamBuilder(): JSX.Element {
   return (
     <h1>Team Builder Component</h1>
   );

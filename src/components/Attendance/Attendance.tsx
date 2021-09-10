@@ -1,6 +1,6 @@
 import React from "react";
 
-function Attendance(): any {
+function Attendance(): JSX.Element {
   return (
     <h1>Attendance Component</h1>
   );
