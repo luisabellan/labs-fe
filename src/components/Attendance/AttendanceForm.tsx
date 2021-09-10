@@ -1,25 +1,25 @@
-import React from "react";
-import {
-  Form, Input, Button,
-} from "antd";
+import React, { useState } from "react";
+import { Button, Select } from "antd";
 
-const FormLayoutDemo = (): JSX.Element => (
-  <>
-    <Form
-      layout="vertical"
-    >
-      <Form.Item label="Form Layout" name="layout" />
-      <Form.Item label="Field A">
-        <Input placeholder="input placeholder" />
-      </Form.Item>
-      <Form.Item label="Field B">
-        <Input placeholder="input placeholder" />
-      </Form.Item>
-      <Form.Item>
-        <Button type="primary">Submit</Button>
-      </Form.Item>
-    </Form>
-  </>
-);
+const { Option } = Select;
+
+const FormLayoutDemo = (): JSX.Element => {
+  const [eventType, selectEventType] = useState("");
+
+  const eventTypeSelect = (val: string) => {
+    selectEventType(val);
+  };
+
+  return (
+    <>
+      <div>Event Type</div>
+      <Select placeholder="Select one" style={{ width: "400px" }} onSelect={eventTypeSelect}>
+        <Option value="stakeholder_meeting">Stakeholder Meeting</Option>
+        <Option value="product_review">Product Review</Option>
+      </Select>
+      <Button type="primary">Submit</Button>
+    </>
+  );
+};
 
 export default FormLayoutDemo;

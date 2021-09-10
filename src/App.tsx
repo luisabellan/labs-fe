@@ -18,7 +18,7 @@ const { Content } = Layout;
 const App = (): JSX.Element => (
   <>
     <NavigationHeader />
-    <Layout>
+    <Layout style={{ margin: "15px", background: "#fff" }}>
       <Content>
         <Switch>
           <Route exact path="/">
