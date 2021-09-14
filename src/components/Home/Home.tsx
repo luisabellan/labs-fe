@@ -1,6 +1,6 @@
 import React from "react";
 
-function Home(): any {
+function Home(): JSX.Element {
   return (
     <h1>Home Component</h1>
   );

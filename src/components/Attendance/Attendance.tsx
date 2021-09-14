@@ -1,8 +1,12 @@
 import React from "react";
+import AttendanceForm from "./AttendanceForm";
 
-function Attendance(): any {
+function Attendance(): JSX.Element {
   return (
-    <h1>Attendance Component</h1>
+    <>
+      <h1>Attendance Component</h1>
+      <AttendanceForm />
+    </>
   );
 }
 
