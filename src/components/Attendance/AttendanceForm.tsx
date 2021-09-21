@@ -28,7 +28,7 @@ const FormLayoutDemo = (): JSX.Element => {
     <>
       <Space direction="vertical">
         <div>Event Type</div>
-        <Select placeholder="Select one" style={{ width: "400px" }} onSelect={eventTypeSelect}>
+        <Select placeholder="Select one" style={{ width: "200px" }} onSelect={eventTypeSelect}>
           <Option value="stakeholder_meeting">Stakeholder Meeting</Option>
           <Option value="product_review">Product Review</Option>
         </Select>

@@ -1,57 +1,43 @@
 import React, { useState } from "react";
 import { useOktaAuth } from "@okta/okta-react";
+import { Form, Input, Button } from "antd";
+
+interface LoginValues {
+  username: string,
+  password: string
+}
 
 const Signin = ():JSX.Element | null => {
   const { oktaAuth } = useOktaAuth();
   const [idToken, setSessionToken] = useState<unknown | null>(null);
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
 
-  const handleSubmit = (e: React.SyntheticEvent) => {
-    e.preventDefault();
-
+  const handleSubmit = (values: LoginValues) => {
+    const { username, password } = values;
     oktaAuth.signInWithCredentials({ username, password })
       .then((res) => {
         const { sessionToken } = res;
         setSessionToken(sessionToken);
         // sessionToken is a one-use token, so make sure this is only called once
-        oktaAuth.signInWithRedirect({ idToken });
-      })
-      .catch((err) => ("Found an error", err));
-  };
-  const handleUsernameChange = (e: React.SyntheticEvent) => {
-    setUsername(e.target.value);
+        // oktaAuth.signInWithRedirect({ idToken });
+      }).catch((err) => (err));
   };
 
-  const handlePasswordChange = (e: React.SyntheticEvent) => {
-    setPassword(e.target.value);
-  };
   if (idToken) {
     return null;
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="username">
-        Username:
-        <input
-          id="username"
-          type="text"
-          value={username}
-          onChange={handleUsernameChange}
-        />
-      </label>
-      <label htmlFor="password">
-        Password:
-        <input
-          id="password"
-          type="password"
-          value={password}
-          onChange={handlePasswordChange}
-        />
-      </label>
-      <input id="submit" type="submit" value="Submit" />
-    </form>
+    <Form name="basic" labelCol={{ span: 8 }} wrapperCol={{ span: 16 }} initialValues={{ remember: true }} onFinish={handleSubmit}>
+      <Form.Item label="Username" name="username" rules={[{ required: true, message: "Please input your username" }]}>
+        <Input />
+      </Form.Item>
+      <Form.Item label="Password" name="password" rules={[{ required: true, message: "Please input your password" }]}>
+        <Input.Password />
+      </Form.Item>
+      <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+        <Button type="primary" htmlType="submit">Sign in</Button>
+      </Form.Item>
+    </Form>
   );
 };
 

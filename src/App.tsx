@@ -11,7 +11,7 @@ import Attendance from "./components/Attendance/Attendance";
 import TeamBuilder from "./components/TeamBuilder/TeamBuilder";
 import LearnerSuccess from "./components/LearnerSuccess/LearnerSuccess";
 import FourthComponent from "./components/FourthComponent/FourthComponent";
-import Home from "./components/Home/Home";
+import Login from "./components/Login/LoginComponent";
 
 const { Content } = Layout;
 
@@ -22,7 +22,7 @@ const App = (): JSX.Element => (
       <Content>
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Login />
           </Route>
           <Route path="/attendance">
             <Attendance />
