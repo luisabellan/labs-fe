@@ -8,11 +8,11 @@ import { UploadOutlined } from "@ant-design/icons";
 const { Option } = Select;
 
 const FormLayoutDemo = (): JSX.Element => {
-  const [eventType, selectEventType] = useState("");
+  const [meetingType, selectMeetingType] = useState("");
   const [date, selectDate] = useState(moment(new Date()));
 
-  const eventTypeSelect = (val: string) => {
-    selectEventType(val);
+  const meetingTypeSelect = (val: string) => {
+    selectMeetingType(val);
   };
 
   const handleDateChange = (dateObj: moment.Moment) => {
@@ -21,14 +21,15 @@ const FormLayoutDemo = (): JSX.Element => {
 
   const onSubmitAttendance = () => {
     // logging the obj we'll send across the webs for now
-    console.log({ date: date.format(), eventType });
+    // eslint-disable-next-line no-console
+    console.log({ date: date.format(), meetingType });
   };
 
   return (
     <>
       <Space direction="vertical">
-        <div>Event Type</div>
-        <Select placeholder="Select one" style={{ width: "200px" }} onSelect={eventTypeSelect}>
+        <div>Meeting Type</div>
+        <Select placeholder="Select one" style={{ width: "200px" }} onSelect={meetingTypeSelect}>
           <Option value="stakeholder_meeting">Stakeholder Meeting</Option>
           <Option value="product_review">Product Review</Option>
         </Select>
