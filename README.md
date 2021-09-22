@@ -3,7 +3,8 @@
 - Required Environment Variables
 
 ```
-
+REACT_APP_OKTA_URL_ISSUER={Org URL}
+REACT_APP_OKTA_CLIENT_ID={APP Client ID}
 ```
 
 - npm i
