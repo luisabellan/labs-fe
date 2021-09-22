@@ -14,16 +14,11 @@ import TeamBuilder from "./components/TeamBuilder/TeamBuilder";
 import LearnerSuccess from "./components/LearnerSuccess/LearnerSuccess";
 import FourthComponent from "./components/FourthComponent/FourthComponent";
 import Home from "./components/Home/Home";
+import { oktaAuthConfig } from "./oktaConfig";
 
 const { Content } = Layout;
 
-const oktaAuth = new OktaAuth({
-  issuer: `${process.env.REACT_APP_OKTA_URL_ISSUER}/oauth2/default`,
-  clientId: `${process.env.REACT_APP_OKTA_CLIENT_ID}`,
-  redirectUri: `${window.location.origin}/implicit/callback`,
-  pkce: true,
-  scopes: ["openid", "email", "profile"],
-});
+const oktaAuth = new OktaAuth(oktaAuthConfig);
 
 const App = (): JSX.Element => {
   const history = useHistory();
