@@ -33,12 +33,10 @@ const FormLayoutDemo = (): JSX.Element => {
           <Option value="stakeholder_meeting">Stakeholder Meeting</Option>
           <Option value="product_review">Product Review</Option>
         </Select>
-        {/* this is working but it's not satisfying the compiler
-         after a lot of research this morning I've come to the conclusion
-        this is simply 💀. We'll have to consider a refactor */}
         <div>Select Date</div>
         <DatePicker defaultValue={date} onChange={() => handleDateChange} />
         <div>Upload Attendance CSV</div>
+        {/* this uploader might not be necessary based on app requirements */}
         <Upload
           accept=".txt, .csv"
         >

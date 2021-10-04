@@ -15,27 +15,27 @@ function NavigationHeader(): JSX.Element {
     <Layout className="layout">
       <Header style={{ padding: 0 }}>
         <Menu mode="horizontal" theme="light">
-          <Menu.Item>
+          <Menu.Item key="homelink">
             <Link to="/">
               Home
             </Link>
           </Menu.Item>
-          <Menu.Item>
+          <Menu.Item key="attendancelink">
             <Link to="/attendance">
               Attendance Tracker
             </Link>
           </Menu.Item>
-          <Menu.Item>
+          <Menu.Item key="teambuilderlink">
             <Link to="/teambuilder">
               Team Builder
             </Link>
           </Menu.Item>
-          <Menu.Item>
+          <Menu.Item key="learnersuccesslink">
             <Link to="/learnersuccess">
               Learner Success Auditing
             </Link>
           </Menu.Item>
-          <Menu.Item>
+          <Menu.Item key="loginoutbutton">
             {authState && !authState.isAuthenticated ? (
               <Button onClick={login}>
                 Login
