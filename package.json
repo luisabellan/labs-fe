@@ -21,6 +21,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "coverage": "npm test -- --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "format": "npx prettier --write .",
     "lint": "npx eslint src/*",
@@ -54,5 +55,13 @@
     "eslint-plugin-react": "^7.25.1",
     "eslint-plugin-react-hooks": "^4.2.0",
     "typescript": "^4.4.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.tsx"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ]
   }
 }

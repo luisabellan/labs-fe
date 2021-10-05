@@ -34,7 +34,7 @@ const FormLayoutDemo = (): JSX.Element => {
           <Option data-testid="select-option" value="product_review">Product Review</Option>
         </Select>
         <div>Select Date</div>
-        <DatePicker defaultValue={date} onChange={() => handleDateChange} />
+        <DatePicker data-testid="start-date" defaultValue={date} onChange={() => handleDateChange} />
         <div>Upload Attendance CSV</div>
         {/* this uploader might not be necessary based on app requirements */}
         <Upload

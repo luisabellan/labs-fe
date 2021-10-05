@@ -1,8 +1,9 @@
 import * as React from "react";
-import { render, fireEvent, waitFor } from "@testing-library/react";
+import {
+  render, fireEvent, waitFor,
+} from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-
 import AttendanceForm from "../components/Attendance/AttendanceForm";
 
 describe("attendance form", () => {
@@ -22,5 +23,14 @@ describe("attendance form", () => {
     await waitFor(() => {
       expect(queryAllByText("Product Review").length).toBe(1);
     });
+  });
+
+  test("datePicker triggers expectedly", () => {
+    const { getByTestId } = render(<Router><AttendanceForm /></Router>);
+    const startDate = getByTestId("start-date");
+    fireEvent.mouseDown(startDate);
+    fireEvent.change(startDate, { target: { value: "2021-10-30" } });
+    fireEvent.click(document.querySelectorAll(".ant-picker-cell-selected")[0]);
+    expect(startDate.value).toBe("2021-10-30");
   });
 });
