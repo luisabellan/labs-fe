@@ -23,10 +23,4 @@ describe("attendance form", () => {
       expect(queryAllByText("Product Review").length).toBe(1);
     });
   });
-  test.skip("state updates", () => {
-
-  });
-  test.skip("select returns date", () => {
-
-  });
 });
