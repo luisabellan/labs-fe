@@ -29,9 +29,9 @@ const FormLayoutDemo = (): JSX.Element => {
     <>
       <Space direction="vertical">
         <div>Meeting Type</div>
-        <Select placeholder="Select one" style={{ width: "200px" }} onSelect={meetingTypeSelect}>
-          <Option value="stakeholder_meeting">Stakeholder Meeting</Option>
-          <Option value="product_review">Product Review</Option>
+        <Select defaultValue="stakeholder_meeting" data-testid="select" placeholder="Select one" style={{ width: "200px" }} onSelect={meetingTypeSelect}>
+          <Option data-testid="select-option" value="stakeholder_meeting">Stakeholder Meeting</Option>
+          <Option data-testid="select-option" value="product_review">Product Review</Option>
         </Select>
         <div>Select Date</div>
         <DatePicker defaultValue={date} onChange={() => handleDateChange} />

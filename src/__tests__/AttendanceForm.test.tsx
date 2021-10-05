@@ -1,19 +1,27 @@
 import * as React from "react";
-import { render } from "@testing-library/react";
+import { render, fireEvent, act } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import AttendanceForm from "../components/Attendance/AttendanceForm";
 
 describe("attendance form", () => {
   test("the form mounts w/ proper elements", () => {
-    const { getByText } = render(<AttendanceForm />);
+    const { getByText } = render(<Router><AttendanceForm /></Router>);
     expect(getByText(/meeting type/i)).toBeInTheDocument();
     expect(getByText(/select date/i)).toBeInTheDocument();
     expect(getByText(/upload attendance csv/i)).toBeInTheDocument();
   });
 
-  test.skip("input events trigger", () => {
-
+  test("select menu events trigger", () => {
+    const { queryAllByText, container } = render(<Router><AttendanceForm /></Router>);
+    expect(queryAllByText("Stakeholder Meeting").length).toBe(1);
+    expect(queryAllByText("Product Review").length).toBe(0);
+    act(() => {
+      const select = container.querySelector(".ant-select-selector");
+      fireEvent.mouseDown(select);
+    });
+    expect(queryAllByText("Product Review").length).toBe(1);
   });
   test.skip("state updates", () => {
 
