@@ -1,5 +1,5 @@
 import * as React from "react";
-import { render, fireEvent, act } from "@testing-library/react";
+import { render, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 
@@ -13,15 +13,15 @@ describe("attendance form", () => {
     expect(getByText(/upload attendance csv/i)).toBeInTheDocument();
   });
 
-  test("select menu events trigger", () => {
+  test("select menu events trigger", async () => {
     const { queryAllByText, container } = render(<Router><AttendanceForm /></Router>);
     expect(queryAllByText("Stakeholder Meeting").length).toBe(1);
     expect(queryAllByText("Product Review").length).toBe(0);
-    act(() => {
-      const select = container.querySelector(".ant-select-selector");
-      fireEvent.mouseDown(select);
+    const select = container.querySelector(".ant-select-selector");
+    fireEvent.mouseDown(select);
+    await waitFor(() => {
+      expect(queryAllByText("Product Review").length).toBe(1);
     });
-    expect(queryAllByText("Product Review").length).toBe(1);
   });
   test.skip("state updates", () => {
 
