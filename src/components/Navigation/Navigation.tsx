@@ -35,6 +35,11 @@ function NavigationHeader(): JSX.Element {
               Learner Success Auditing
             </Link>
           </Menu.Item>
+          <Menu.Item key="githubtable">
+            <Link to="/githubtable">
+              Github
+            </Link>
+          </Menu.Item>
           <Menu.Item key="loginoutbutton">
             {authState && !authState.isAuthenticated ? (
               <Button onClick={login}>

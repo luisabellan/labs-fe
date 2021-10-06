@@ -12,7 +12,7 @@ import NavigationHeader from "./components/Navigation/Navigation";
 import Attendance from "./components/Attendance/Attendance";
 import TeamBuilder from "./components/TeamBuilder/TeamBuilder";
 import LearnerSuccess from "./components/LearnerSuccess/LearnerSuccess";
-import FourthComponent from "./components/FourthComponent/FourthComponent";
+import GithubComponent from "./components/Github/GithubComponent";
 import Home from "./components/Home/Home";
 import { oktaAuthConfig } from "./oktaConfig";
 
@@ -45,8 +45,8 @@ const App = (): JSX.Element => {
               <SecureRoute path="/learnersuccess">
                 <LearnerSuccess />
               </SecureRoute>
-              <SecureRoute path="/fourth">
-                <FourthComponent />
+              <SecureRoute path="/githubtable">
+                <GithubComponent />
               </SecureRoute>
             </Switch>
           </Content>
