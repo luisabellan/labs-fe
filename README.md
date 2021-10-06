@@ -6,6 +6,8 @@
 REACT_APP_OKTA_URL_ISSUER={Org URL}
 REACT_APP_OKTA_CLIENT_ID={APP Client ID}
 ```
-
-- npm i
-- npm start
+### Getting started
+- `npm i` to install dependencies
+- `npm start` to run locally
+- `npm test` to run tests locally
+- `npm run coverage` to print a report of your test coverage
