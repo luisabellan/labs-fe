@@ -2,45 +2,50 @@ import React from "react";
 
 const columns = [
   {
-    title: "Name",
-    dataIndex: "name",
-    key: "name",
+    title: "Github Handle",
+    dataIndex: "ghhandle",
+    key: "ghhandle",
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     render: (text: string) => <a href="www.google.com">{text}</a>,
   },
   {
-    title: "Age",
-    dataIndex: "age",
-    key: "age",
+    title: "Pull Requests Submitted",
+    dataIndex: "prsSubmitted",
+    key: "prsSubmitted",
   },
   {
-    title: "Address",
-    dataIndex: "address",
-    key: "address",
+    title: "Pull Requests Reviewed",
+    dataIndex: "prsReviewed",
+    key: "prsReviewed",
+  },
+  {
+    title: "Comments",
+    dataIndex: "comments",
+    key: "comments",
   },
 ];
 
 const data = [
   {
     key: "1",
-    name: "John Brown",
-    age: 32,
-    address: "New York No. 1 Lake Park",
-    tags: ["nice", "developer"],
+    ghhandle: "Rubius Hagrid",
+    prsSubmitted: 32,
+    prsReviewed: 32,
+    comments: 22,
   },
   {
     key: "2",
-    name: "Jim Green",
-    age: 42,
-    address: "London No. 1 Lake Park",
-    tags: ["loser"],
+    ghhandle: "James Potter",
+    prsSubmitted: 42,
+    prsReviewed: 42,
+    comments: 22,
   },
   {
     key: "3",
-    name: "Joe Black",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
+    ghhandle: "Serious Black",
+    prsSubmitted: 32,
+    prsReviewed: 32,
+    comments: 22,
   },
 ];
 
